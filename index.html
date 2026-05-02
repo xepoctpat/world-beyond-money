@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="sr" data-lang="sr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>H3X — Manifest za svet s one strane novca</title>
+<meta name="description" content="H3X — Manifest. Za svet s one strane novca. A manifesto for a world beyond money. Edition I, 2030.">
+<meta property="og:title" content="H3X — A World Beyond Money">
+<meta property="og:description" content="A manifesto for a world beyond money. Edition I, 2030.">
+<meta property="og:type" content="article">
+
+<style>
+  :root {
+    --paper: #F2EBDB; --paper-soft: #EAE2CF; --paper-line: #C9BFA5;
+    --ink: #141414; --ink-dim: #4A4640; --ink-muted: #8A8478;
+    --red: #C8362A; --red-deep: #9B2A1F; --red-glow: #E0594B;
+    --max: 880px;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { background: var(--paper); color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.5; -webkit-font-smoothing: antialiased; }
+  a { color: var(--red); text-decoration: none; border-bottom: 1px solid currentColor; }
+  a:hover { color: var(--red-deep); }
+  .masthead { border-bottom: 8px solid var(--red); background: var(--paper); }
+  .masthead-bar { background: var(--red); height: 14px; }
+  .masthead-inner { max-width: var(--max); margin: 0 auto; padding: 18px 24px 8px;
+    display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 12px;
+    border-top: 3px solid var(--ink); border-bottom: 1px solid var(--ink); margin-top: 6px; }
+  .masthead-inner > .runhead { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+  .lang-toggle { display: inline-flex; gap: 0; border: 1px solid var(--ink); }
+  .lang-toggle button { background: transparent; border: 0; padding: 6px 14px; font: inherit;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.12em; cursor: pointer; color: var(--ink);
+    border-right: 1px solid var(--ink); }
+  .lang-toggle button:last-child { border-right: 0; }
+  .lang-toggle button.active { background: var(--ink); color: var(--paper); }
+  .hero { max-width: var(--max); margin: 0 auto; padding: 56px 24px 32px; text-align: left; }
+  .eyebrow { color: var(--red); font-size: 12px; font-weight: 700; letter-spacing: 0.32em;
+    text-transform: uppercase; margin: 0 0 28px; }
+  .hero h1 { font-size: clamp(48px, 9vw, 96px); font-weight: 900; line-height: 0.95;
+    letter-spacing: -0.02em; margin: 0; }
+  .hero h1 .accent { color: var(--red); }
+  .hero .sub { margin-top: 28px; font-size: clamp(18px, 2.4vw, 22px); font-style: italic;
+    color: var(--ink-dim); max-width: 640px; }
+  .hero .refrain { margin-top: 36px; border-top: 4px solid var(--ink); padding-top: 14px;
+    font-size: 13px; font-weight: 700; letter-spacing: 0.22em; }
+  section { max-width: var(--max); margin: 0 auto; padding: 48px 24px; }
+  h2.section-title { font-size: clamp(28px, 4vw, 36px); font-weight: 800; letter-spacing: -0.01em;
+    line-height: 1.1; margin: 0 0 20px; }
+  h2.section-title .num { color: var(--red); font-weight: 800; margin-right: 10px; }
+  .lead { font-size: 18px; color: var(--ink-dim); margin: 0 0 24px; max-width: 640px; }
+  .refrain-band { background: var(--paper-soft); border-top: 3px solid var(--ink);
+    border-bottom: 3px solid var(--ink); padding: 64px 24px; text-align: center; }
+  .refrain-band .verb { font-size: clamp(56px, 12vw, 120px); font-weight: 900;
+    letter-spacing: -0.03em; line-height: 1; margin: 0; color: var(--ink); }
+  .refrain-band .gloss { margin-top: 18px; font-size: 16px; font-style: italic;
+    color: var(--red); letter-spacing: 0.04em; }
+  .thesis { border-top: 1px solid var(--paper-line); padding: 32px 0 12px;
+    display: grid; grid-template-columns: 96px 1fr; gap: 16px; align-items: start; }
+  .thesis .roman { font-size: 44px; font-weight: 900; color: var(--red);
+    letter-spacing: -0.02em; line-height: 1; }
+  .thesis .label { font-size: 11px; font-weight: 700; letter-spacing: 0.18em;
+    color: var(--ink-muted); text-transform: uppercase; margin-bottom: 6px; }
+  .thesis .head { font-size: clamp(22px, 3.3vw, 30px); font-weight: 800; line-height: 1.18;
+    letter-spacing: -0.01em; margin: 0 0 14px; }
+  .thesis .body { font-size: 17px; color: var(--ink-dim); margin: 0 0 14px; }
+  .thesis .kicker { font-size: 14px; font-style: italic; font-weight: 700; color: var(--red); margin: 0; }
+  .diag { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 28px; }
+  .diag > div { border-left: 3px solid var(--red); padding: 4px 0 4px 14px; }
+  .diag .dx-label { font-size: 11px; font-weight: 700; letter-spacing: 0.18em;
+    color: var(--red); margin: 0 0 6px; }
+  .diag .dx-body { font-size: 15px; color: var(--ink); margin: 0; }
+  .schedule { margin-top: 16px; }
+  .phase { display: grid; grid-template-columns: 70px 140px 1fr; gap: 16px; align-items: start;
+    border-top: 1px solid var(--paper-line); padding: 18px 0; }
+  .phase:last-child { border-bottom: 1px solid var(--paper-line); }
+  .phase .ph-num { font-size: 28px; font-weight: 900; color: var(--red); }
+  .phase .ph-meta { display: flex; flex-direction: column; gap: 2px; }
+  .phase .ph-year { font-size: 11px; font-weight: 700; letter-spacing: 0.16em; color: var(--red); }
+  .phase .ph-title { font-size: 17px; font-weight: 800; letter-spacing: 0.04em; }
+  .phase .ph-body { font-size: 15px; color: var(--ink-dim); }
+  .sign { background: var(--ink); color: var(--paper); padding: 64px 24px; }
+  .sign-inner { max-width: var(--max); margin: 0 auto; }
+  .sign h2 { font-size: clamp(36px, 6vw, 64px); font-weight: 900; letter-spacing: -0.02em;
+    line-height: 1; margin: 0; color: var(--paper); }
+  .sign h2 .ac { color: var(--red-glow); }
+  .sign .sub { margin-top: 18px; font-size: 17px; color: var(--paper-line);
+    font-style: italic; max-width: 640px; }
+  .sign .form-wrap { margin-top: 32px; background: var(--paper); color: var(--ink);
+    padding: 18px; border: 2px solid var(--red); }
+  .sign .form-wrap p { margin: 0 0 8px; font-size: 14px; color: var(--ink-dim); }
+  .sign .form-wrap iframe { width: 100%; border: 0; min-height: 420px; }
+  .downloads { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px; margin-top: 24px; }
+  .downloads a { border: 1px solid var(--ink); padding: 16px 18px; color: var(--ink);
+    font-weight: 700; font-size: 14px; letter-spacing: 0.06em;
+    display: flex; flex-direction: column; gap: 4px; }
+  .downloads a small { font-size: 11px; font-weight: 600; letter-spacing: 0.14em;
+    color: var(--red); text-transform: uppercase; }
+  .downloads a:hover { background: var(--ink); color: var(--paper); }
+  .downloads a:hover small { color: var(--red-glow); }
+  .colophon { border-top: 8px solid var(--red); padding: 48px 24px; background: var(--paper-soft); }
+  .colophon-inner { max-width: var(--max); margin: 0 auto; display: grid;
+    grid-template-columns: 1fr 1fr; gap: 36px; }
+  .colophon h3 { font-size: 11px; font-weight: 700; letter-spacing: 0.22em;
+    color: var(--red); margin: 0 0 14px; text-transform: uppercase; }
+  .colophon dl { margin: 0; display: grid; grid-template-columns: 130px 1fr; gap: 8px 14px; }
+  .colophon dt { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: var(--ink-muted); }
+  .colophon dd { margin: 0; font-size: 14px; }
+  .colophon .terms p { font-size: 17px; font-weight: 800; margin: 0 0 8px; }
+  .colophon .terms small { display: block; font-size: 13px; color: var(--ink-dim); margin-bottom: 14px; }
+  .colophon .terms .stamp { font-size: 13px; font-weight: 700; font-style: italic;
+    color: var(--red); letter-spacing: 0.06em; }
+  footer.foot { background: var(--ink); color: var(--paper-line); padding: 28px 24px;
+    text-align: center; border-top: 14px solid var(--red); }
+  footer.foot .stamp { font-size: 13px; letter-spacing: 0.22em; font-weight: 700; color: var(--paper); }
+  footer.foot small { display: block; margin-top: 8px; font-size: 11px;
+    letter-spacing: 0.16em; color: var(--paper-line); }
+  [data-lang="sr"] .en { display: none; }
+  [data-lang="en"] .sr { display: none; }
+  @media (max-width: 720px) {
+    .diag { grid-template-columns: 1fr; }
+    .colophon-inner { grid-template-columns: 1fr; }
+    .thesis { grid-template-columns: 60px 1fr; gap: 10px; }
+    .thesis .roman { font-size: 32px; }
+    .phase { grid-template-columns: 50px 110px 1fr; gap: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-bar"></div>
+  <div class="masthead-inner">
+    <span class="runhead sr">H3X — Manifest  ·  Izdanje I  ·  2030</span>
+    <span class="runhead en">H3X — A Manifesto  ·  Edition I  ·  2030</span>
+    <div class="lang-toggle">
+      <button data-set="sr" class="active" type="button">SR</button>
+      <button data-set="en" type="button">EN</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <p class="eyebrow sr">·  Manifest  ·  9 teza  ·</p>
+  <p class="eyebrow en">·  A Manifesto  ·  9 Theses  ·</p>
+  <h1 class="sr">Za svet<br>s one strane<br><span class="accent">novca.</span></h1>
+  <h1 class="en">For a<br>world beyond<br><span class="accent">money.</span></h1>
+  <p class="sub sr">Rekli su vam da je oskudica prirodna. Lagali su.</p>
+  <p class="sub en">They told you scarcity was natural. They were lying.</p>
+  <p class="refrain sr">ODBIJAMO.   ·   PREDLAŽEMO.   ·   OBJAVLJUJEMO.</p>
+  <p class="refrain en">WE REFUSE.   ·   WE PROPOSE.   ·   WE DECLARE.</p>
+</section>
+
+<section>
+  <h2 class="section-title sr"><span class="num">¶</span>Preambula</h2>
+  <h2 class="section-title en"><span class="num">¶</span>Preamble</h2>
+  <p class="lead sr"><strong>Stojimo na prelomnom trenutku.</strong> Temelji naše civilizacije — sagrađeni na oskudici, nadmetanju i centralizovanoj moći — pucaju.</p>
+  <p class="lead en"><strong>We stand at a pivotal moment.</strong> The foundations of our civilization — built on scarcity, competition, and centralized power — are fracturing.</p>
+  <div class="diag sr">
+    <div><p class="dx-label">EKONOMSKO</p><p class="dx-body">Uporna inflacija, nestabilnost tržišta, sistemska finansijska nesigurnost.</p></div>
+    <div><p class="dx-label">EKOLOŠKO</p><p class="dx-body">Klimatske promene. Iscrpljivanje resursa. Planeta pod pritiskom.</p></div>
+    <div><p class="dx-label">DRUŠTVENO</p><p class="dx-body">Nejednakost i polarizacija nagrizaju društvenu koheziju.</p></div>
+    <div><p class="dx-label">INSTITUCIONALNO</p><p class="dx-body">Poverenje u centralizovane vlasti se urušava. Sistem deluje nameštano.</p></div>
+  </div>
+  <div class="diag en">
+    <div><p class="dx-label">ECONOMIC</p><p class="dx-body">Persistent inflation, market volatility, systemic financial instability.</p></div>
+    <div><p class="dx-label">ENVIRONMENTAL</p><p class="dx-body">Climate change. Resource depletion. A planet under stress.</p></div>
+    <div><p class="dx-label">SOCIAL</p><p class="dx-body">Inequality and polarization undermine social cohesion.</p></div>
+    <div><p class="dx-label">INSTITUTIONAL</p><p class="dx-body">Trust in centralized authorities collapses. The system feels rigged.</p></div>
+  </div>
+</section>
+
+<div class="refrain-band">
+  <p class="verb sr">ODBIJAMO.</p>
+  <p class="verb en">WE REFUSE.</p>
+  <p class="gloss sr">Što je rukom stvoreno, rukom se i razgrađuje.</p>
+  <p class="gloss en">What was made by hand can be unmade.</p>
+</div>
+
+<section>
+  <article class="thesis"><div class="roman">I</div><div>
+    <p class="label sr">O Oskudici</p><p class="label en">On Scarcity</p>
+    <h3 class="head sr">Oskudica je izbor. Odbijamo je.</h3>
+    <h3 class="head en">Scarcity is a choice. We refuse it.</h3>
+    <p class="body sr">Planirano zastarevanje. Gomilanje resursa. Veštačke granice. Imenujemo ovo onim što jeste: politički artefakt, ne prirodni zakon.</p>
+    <p class="body en">Planned obsolescence. Resource hoarding. Artificial limits. We name this for what it is: a political artifact, not a natural law.</p>
+    <p class="kicker sr">— Što je rukom stvoreno, rukom se i razgrađuje.</p>
+    <p class="kicker en">— What was made by hand can be unmade.</p>
+  </div></article>
+  <article class="thesis"><div class="roman">II</div><div>
+    <p class="label sr">O Starom Poredku</p><p class="label en">On the Old Order</p>
+    <h3 class="head sr">Juče raspodeljeno po ceni. Sutra prema potrebi.</h3>
+    <h3 class="head en">Yesterday rationed by price. Tomorrow routed by need.</h3>
+    <p class="body sr">Resursi teku ka kupovnoj moći. Osnovne stvari se raspodeljuju po ceni. Šačica institucija odlučuje za mnoge. Sistem deluje nameštano — jer jeste nameštan.</p>
+    <p class="body en">Resources flow toward purchasing power. Essentials are rationed by price. A few institutions decide for the many. The system feels rigged — because it is.</p>
+    <p class="kicker sr">— Cena nikada nije bila mera potrebe.</p>
+    <p class="kicker en">— The price tag was never a measure of need.</p>
+  </div></article>
+  <article class="thesis"><div class="roman">III</div><div>
+    <p class="label sr">Slogan</p><p class="label en">A Slogan</p>
+    <h3 class="head sr">Cena nije istina.</h3>
+    <h3 class="head en">Price is not truth.</h3>
+    <p class="body sr">Tržišna cena nije priroda. Nije objektivnost. Nije pravda. To je politički ishod, prevučen lakom matematike.</p>
+    <p class="body en">Market price is not nature. It is not objectivity. It is not justice. It is a political outcome, lacquered with math.</p>
+  </div></article>
+</section>
+
+<div class="refrain-band">
+  <p class="verb sr">PREDLAŽEMO.</p><p class="verb en">WE PROPOSE.</p>
+  <p class="gloss sr">Arhitektura za svet koji je odlučio da deli.</p>
+  <p class="gloss en">An architecture for a world that has decided to share.</p>
+</div>
+
+<section>
+  <article class="thesis"><div class="roman">IV</div><div>
+    <p class="label sr">O Rešetki</p><p class="label en">On the Lattice</p>
+    <h3 class="head sr">Svaka tačka je čvor. Svaka veza je dokaz.</h3>
+    <h3 class="head en">Every point a node. Every link a proof.</h3>
+    <p class="body sr">Višedimenzionalna mreža u kojoj svaka tačka može da drži informacije i učestvuje u proveri. Ne skladište podataka — živa, evolutivna predstava same stvarnosti.</p>
+    <p class="body en">A multi-dimensional fabric where every point can hold information and participate in validation. Not data storage — a living, evolving representation of reality itself.</p>
+    <p class="kicker sr">— Decentralizovano. Proverljivo. Otporno. Emergentno.</p>
+    <p class="kicker en">— Decentralized. Verifiable. Resilient. Emergent.</p>
+  </div></article>
+  <article class="thesis"><div class="roman">V</div><div>
+    <p class="label sr">O Distribuciji i Otpornosti</p><p class="label en">On Distribution &amp; Resilience</p>
+    <h3 class="head sr">Nijedan čvor nije suveren. Svaki čvor je nužan.</h3>
+    <h3 class="head en">No node is sovereign. Every node is essential.</h3>
+    <p class="body sr">Rešetka raste bez dozvole. Svaki čvor proverava ostale. Kriptografski dokaz zamenjuje institucionalno poverenje. Upravljanje izrasta odozdo — nikad oteto, nikad u vlasništvu.</p>
+    <p class="body en">The lattice scales without permission. Every node validates the rest. Cryptographic proof replaces institutional trust. Governance emerges from below — never seized, never owned.</p>
+    <p class="kicker sr">— Ono što je raspodeljeno ne može se tiho prisvojiti.</p>
+    <p class="kicker en">— What is distributed cannot be quietly captured.</p>
+  </div></article>
+  <article class="thesis"><div class="roman">VI</div><div>
+    <p class="label sr">O Konvergenciji</p><p class="label en">On Convergence</p>
+    <h3 class="head sr">Analogno i digitalno su jedna tkanina.</h3>
+    <h3 class="head en">The analog and the digital are one fabric.</h3>
+    <p class="body sr">Rešetka čita fizički svet i upisuje se u njega. Senzori, signali i ljudsko iskustvo postaju proverljivi podaci. Virtualnost postaje platno na kome zajednice probaju budućnosti koje žele.</p>
+    <p class="body en">The lattice reads the physical world and writes back to it. Sensors, signals, and human experience become verifiable data. Virtuality becomes the canvas where communities rehearse the futures they want.</p>
+    <p class="kicker sr">— Mostovi, ne zidovi, između materije i uma.</p>
+    <p class="kicker en">— Bridges, not walls, between matter and mind.</p>
+  </div></article>
+  <article class="thesis"><div class="roman">VII</div><div>
+    <p class="label sr">O Suverenu  ·  S·I·R</p><p class="label en">On the New Sovereign  ·  S·I·R</p>
+    <h3 class="head sr">SIR — Super Inteligentni Regulator. Nije vladar. Regulator.</h3>
+    <h3 class="head en">SIR — The Super Intelligent Regulator. Not a ruler. A regulator.</h3>
+    <p class="body sr">SIR ne drži funkciju. Njegovi parametri su javni. Rešetka mu daje vlast — i može mu je oduzeti. Ne komanduje; kalibrira. Zajednica ima poslednju reč.</p>
+    <p class="body en">SIR holds no office. Its parameters are public. The lattice grants its authority — and can revoke it. It does not command; it calibrates. The commons override.</p>
+    <p class="kicker sr">— Novi suveren, vezan transparentnim pravilima. Niko ga ne poseduje. Odgovoran je svima.</p>
+    <p class="kicker en">— A new sovereign, bound by transparent rules. Owned by no one. Accountable to all.</p>
+  </div></article>
+</section>
+
+<div class="refrain-band">
+  <p class="verb sr">OBJAVLJUJEMO.</p><p class="verb en">WE DECLARE.</p>
+  <p class="gloss sr">Ono što sledi nije želja. To je raspored.</p>
+  <p class="gloss en">What follows is not a wish. It is a schedule.</p>
+</div>
+
+<section>
+  <article class="thesis"><div class="roman">VIII</div><div>
+    <p class="label sr">Slogan</p><p class="label en">A Slogan</p>
+    <h3 class="head sr">Valuta je doprinos.</h3>
+    <h3 class="head en">The currency is contribution.</h3>
+    <p class="body sr">Ono što čovek izgradi, nauči, isceli ili daruje — to mu daje status. Ono što gomila gubi smisao. Novac postaje samo alat, više nikad vratar.</p>
+    <p class="body en">What a person builds, teaches, heals, or gives — that confers status. What is hoarded loses meaning. Money fades to a tool — never again a gatekeeper.</p>
+  </div></article>
+  <article class="thesis"><div class="roman">IX</div><div>
+    <p class="label sr">O Obilju</p><p class="label en">On Abundance</p>
+    <h3 class="head sr">Obilje je podrazumevano.</h3>
+    <h3 class="head en">Plenty is the default.</h3>
+    <p class="body sr">Ovo nije preraspodela oskudice. Ovo je arhitektura obilja. Gradimo za popravku, deljenje, kruženje. Pitanje nije da li, već kada.</p>
+    <p class="body en">This is not a redistribution of scarcity. It is the architecture of plenty. We build for repair, sharing, circulation. The question is not if. The question is when.</p>
+    <p class="kicker sr">— Obilje umesto oskudice. Saradnja umesto nadmetanja.</p>
+    <p class="kicker en">— Abundance over scarcity. Collaboration over competition.</p>
+  </div></article>
+</section>
+
+<section>
+  <h2 class="section-title sr"><span class="num">¶</span>Raspored</h2>
+  <h2 class="section-title en"><span class="num">¶</span>The Schedule</h2>
+  <p class="lead sr">Kalendar prelaza.</p><p class="lead en">A calendar of the transition.</p>
+  <div class="schedule">
+    <div class="phase"><div class="ph-num">I</div>
+      <div class="ph-meta"><span class="ph-year">2025 – 2026</span><span class="ph-title sr">TEMELJ</span><span class="ph-title en">FOUNDATION</span></div>
+      <div class="ph-body"><span class="sr">Pilot programi i digitalna infrastruktura. Uspostavljeni osnovni protokoli. 25% veća efikasnost.</span><span class="en">Pilot programs and digital infrastructure. Core protocols established. 25% efficiency gains.</span></div></div>
+    <div class="phase"><div class="ph-num">II</div>
+      <div class="ph-meta"><span class="ph-year">2027 – 2028</span><span class="ph-title sr">INTEGRACIJA</span><span class="ph-title en">INTEGRATION</span></div>
+      <div class="ph-body"><span class="sr">Regionalno uvođenje. Mreže se spajaju u gradovima i zemljama. 50% veća efikasnost.</span><span class="en">Regional implementation. Networks join up across cities and countries. 50% efficiency gains.</span></div></div>
+    <div class="phase"><div class="ph-num">III</div>
+      <div class="ph-meta"><span class="ph-year">2029 – 2030</span><span class="ph-title sr">PRIMENA</span><span class="ph-title en">DEPLOYMENT</span></div>
+      <div class="ph-body"><span class="sr">Globalno lansiranje pune skale. Prelaz se završava. 75% veća efikasnost u svetu.</span><span class="en">Full-scale global launch. The transition completes. 75% efficiency gains worldwide.</span></div></div>
+    <div class="phase"><div class="ph-num">§</div>
+      <div class="ph-meta"><span class="ph-year sr">POSLE 2030</span><span class="ph-year en">POST-2030</span><span class="ph-title sr">NOVA NORMALA</span><span class="ph-title en">THE NEW NORMAL</span></div>
+      <div class="ph-body"><span class="sr">Postmonetarna civilizacija u funkciji. Raspodela zasnovana na obilju, u potpunosti aktivna.</span><span class="en">Post-monetary civilization is operational. Abundance-based allocation, fully online.</span></div></div>
+  </div>
+</section>
+
+<div class="sign"><div class="sign-inner">
+  <h2 class="sr">Ovaj dokument je napisan da bi bio <span class="ac">potpisan.</span></h2>
+  <h2 class="en">This document was written to be <span class="ac">signed.</span></h2>
+  <p class="sub sr">Svaki čitalac je čvor. Rešetka se gradi jedan potpis po jedan. Pridružite se prvih sto.</p>
+  <p class="sub en">Every reader is a node. The lattice is built one signature at a time. Join the first hundred.</p>
+  <div class="form-wrap">
+    <p class="sr"><strong>Potpišite manifest.</strong> Forma se pojavljuje ispod.</p>
+    <p class="en"><strong>Sign the manifesto.</strong> The form appears below.</p>
+    <iframe src="https://tally.so/embed/REPLACE_ME?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" title="Sign the manifesto"></iframe>
+  </div>
+</div></div>
+
+<section>
+  <h2 class="section-title sr"><span class="num">¶</span>Preuzmite. Štampajte. Delite.</h2>
+  <h2 class="section-title en"><span class="num">¶</span>Download. Print. Pass it on.</h2>
+  <p class="lead sr">Sva izdanja su slobodna za reprodukciju, prevođenje i distribuciju.</p>
+  <p class="lead en">All editions are free to reproduce, translate, and distribute.</p>
+  <div class="downloads">
+    <a href="downloads/h3x_manifest_sr.pdf"><small class="sr">DECK · SRPSKI</small><small class="en">DECK · SERBIAN</small><span>H3X — Manifest (PDF)</span></a>
+    <a href="downloads/h3x_manifesto_en.pdf"><small class="sr">DECK · ENGLESKI</small><small class="en">DECK · ENGLISH</small><span>H3X — A Manifesto (PDF)</span></a>
+    <a href="downloads/h3x_broadside_sr.pdf"><small class="sr">PLAKAT · SR</small><small class="en">BROADSIDE · SR</small><span class="sr">Plakat za štampu (PDF)</span><span class="en">Print broadside (PDF)</span></a>
+    <a href="downloads/h3x_broadside_3000x4200.png"><small>PNG · 300 DPI</small><span class="sr">Plakat (3000×4200, štampa)</span><span class="en">Broadside PNG (3000×4200, print)</span></a>
+  </div>
+</section>
+
+<div class="colophon"><div class="colophon-inner">
+  <div>
+    <h3 class="sr">Kolofon</h3><h3 class="en">Colophon</h3>
+    <dl>
+      <dt class="sr">IZDANJE</dt><dt class="en">EDITION</dt>
+      <dd class="sr">Prvo izdanje  ·  2030</dd><dd class="en">First edition  ·  2030</dd>
+      <dt class="sr">UREDNIŠTVO</dt><dt class="en">EDITORIAL</dt>
+      <dd>Kolektiv H3X / The H3X Collective</dd>
+      <dt class="sr">JEZIK</dt><dt class="en">LANGUAGE</dt>
+      <dd class="sr">Srpski (latinica)  ·  Engleski</dd><dd class="en">Serbian (Latin)  ·  English</dd>
+      <dt>FORMAT</dt><dd>Web · PDF · Broadside</dd>
+    </dl>
+  </div>
+  <div class="terms">
+    <h3 class="sr">Prava i Reprodukcija</h3><h3 class="en">Rights &amp; Reproduction</h3>
+    <p class="sr">Bez autorskih prava. Bez dozvole. Bez kraja.</p>
+    <p class="en">No copyright. No permission. No end.</p>
+    <small class="sr">Ne tražimo saglasnost — nudimo materijal. Preštampavajte. Prevodite. Pasujte u nove kontekste.</small>
+    <small class="en">We do not ask consent — we offer material. Reprint. Translate. Recontextualize.</small>
+    <p class="stamp sr">§   Reprodukujte ga.   ·   Umnožavajte ga.   ·   Rasturite ga.</p>
+    <p class="stamp en">§   Reproduce it.   ·   Multiply it.   ·   Set it loose.</p>
+  </div>
+</div></div>
+
+<footer class="foot">
+  <div class="stamp sr">ODBIJAMO.   ·   PREDLAŽEMO.   ·   OBJAVLJUJEMO.</div>
+  <div class="stamp en">WE REFUSE.   ·   WE PROPOSE.   ·   WE DECLARE.</div>
+  <small>#H3X2030   ·   KOLEKTIV H3X   ·   2030</small>
+</footer>
+
+<script>
+  (function () {
+    var btns = document.querySelectorAll('.lang-toggle button');
+    var html = document.documentElement;
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () {
+        var lang = b.getAttribute('data-set');
+        html.setAttribute('data-lang', lang);
+        html.setAttribute('lang', lang);
+        btns.forEach(function (x) { x.classList.toggle('active', x === b); });
+        try { localStorage.setItem('h3x.lang', lang); } catch (e) {}
+      });
+    });
+    try {
+      var saved = localStorage.getItem('h3x.lang');
+      if (saved && (saved === 'sr' || saved === 'en')) {
+        document.querySelector('.lang-toggle button[data-set="' + saved + '"]').click();
+      }
+    } catch (e) {}
+  })();
+</script>
+</body>
+</html>
